@@ -5,7 +5,17 @@
 #define COIN_KINDS   5U
 #define TOY_COUNT    4U
 #define NAME_LEN    16U
-
+static int readInt(const char *prompt, int *out) {
+    char buf[64];
+    if (prompt != NULL) {
+        printf("%s", prompt);
+        fflush(stdout);
+    }
+    if (fgets(buf, (int)sizeof(buf), stdin) == NULL) {
+        return 0; /* فشل القراءة أو EOF */
+    }
+    return sscanf(buf, "%d", out) == 1; /* يرجع 1 لو تم قراءة رقم صحيح */
+}
 static const uint16_t COIN_VALUE[COIN_KINDS] = { 25U, 50U, 100U, 200U, 500U };
 static uint16_t coinCount[COIN_KINDS];
 
