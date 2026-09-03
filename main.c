@@ -31,7 +31,6 @@ static void seedBank(void)
     printf("\n[+] Piggy Bank reset and seeded successfully!\n");
 }
 
-/* 2. إضافة عملات للحصالة */
 static void addCoins(void)
 {
     int kindInput = 0;
