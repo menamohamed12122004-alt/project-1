@@ -31,7 +31,6 @@ static void seedBank(void)
     printf("\n[+] Piggy Bank reset and seeded successfully!\n");
 }
 
-/* Add a selected coin type to the bank. */
 static void addCoins(void)
 {
     int kindInput = 0;
@@ -104,7 +103,6 @@ static uint32_t bankTotal(void)
 
 static uint32_t sumCoins(const uint16_t *counts, uint8_t n)
 {
-    /* Recursively add the count of each coin type. */
     if (n == 0U)
     {
         return 0U;
